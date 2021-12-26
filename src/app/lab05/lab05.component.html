@@ -1,0 +1,51 @@
+<h2>Lab05</h2>
+<button type="button" (click)="addSection()">
+  <mat-icon>add</mat-icon>Section
+</button>
+
+<div *ngFor="let section of sections; let j = index">
+  <hr />
+  <div class="add-sec">
+    <div class="section-title">
+      <button type="button" (click)="addInput(section)">
+        <mat-icon>add</mat-icon> <span>Input</span>
+      </button>
+
+      <strong>Section</strong><span class="section-number">{{ j + 1 }}</span>
+    </div>
+
+    <div>
+      <button
+        type="button"
+        (click)="deleteSection(j)"
+        [disabled]="sections.length <= 1"
+      >
+        <mat-icon>delete_forever</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="cmp-inputs-container">
+    <ng-container *ngFor="let item of section.items; let i = index">
+      <b
+        >Number <span class="cl-number">{{ i + 1 }}</span></b
+      >
+      <input
+        #elem
+        type="number"
+        [value]="item.value"
+        (input)="onChange(section, i, elem.valueAsNumber)"
+      />
+      <button
+        type="button"
+        (click)="deleteItem(section,i)"
+        [disabled]="section.items.length <= 1"
+      >
+        <mat-icon>delete_forever</mat-icon>
+      </button>
+    </ng-container>
+
+    <b class="cl-result">Result </b>
+    <output class="result"> {{ getResult(section) }}</output>
+  </div>
+</div>
