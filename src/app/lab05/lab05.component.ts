@@ -34,8 +34,6 @@ export class Lab05Component implements OnInit {
         },
       ],
     });
-
-    console.log(this.sections);
   }
 
   deleteSection(index: number): void {
