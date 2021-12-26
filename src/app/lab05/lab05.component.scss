@@ -1,0 +1,49 @@
+
+.cmp-inputs-container{
+  display: grid;
+  grid-template-columns: 0fr 1fr 0fr;
+  row-gap: 0.5em;
+  align-items: center;
+
+  &>b{
+    white-space: nowrap;
+
+    &::after{
+      content: '::';
+      color: rgb(51, 122, 204);
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+    }
+  }
+
+  b.cl-result{
+    text-align: right;
+      &::after{
+          content: '::';
+          color: rgb(51, 122, 204);
+          margin-left: 0.5em;
+          margin-right: 0.5em;
+          text-align: center;
+        }
+  }
+  .result{
+    text-align: right;
+    text-decoration: underline;
+    text-decoration-style: double;
+    padding-right: 2ch;
+  }
+}
+
+.add-sec {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  display: flex;
+  align-items: center;
+}
+.section-title{
+  display: flex;
+  align-items: center;
+}

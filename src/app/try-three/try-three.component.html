@@ -1,0 +1,19 @@
+<h2>Try Three</h2>
+
+<button type="button" (click)="add()">Add</button>
+<br />
+<div class="cmp-inputs-container">
+  <ng-container *ngFor="let item of items; let i = index">
+    <b>Number <span class="cl-number">{{ i+1 }}</span></b>
+    <input
+      #elem
+      type="number"
+      [value]="item.value"
+      (click)="onChange(i, elem.valueAsNumber)"
+    />
+    <button type="button" (click)="delete(i)" [disabled]="items.length <= 1">Delete</button>
+  </ng-container>
+</div>
+<output>{{ getResult() }}</output>
+
+

@@ -1,0 +1,17 @@
+.cmp-inputs-container{
+  display: grid;
+  grid-template-columns: 0fr 1fr 0fr;
+  row-gap: 0.5em;
+  align-items: center;
+
+  &>b{
+    white-space: nowrap;
+
+    &::after{
+      content: '::';
+      color: rgb(51, 122, 204);
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+    }
+}
+}
